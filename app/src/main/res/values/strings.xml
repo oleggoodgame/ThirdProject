@@ -2,4 +2,7 @@
     <string name="app_name">ThirdProject</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="shortcut_short_label">Download</string>
+    <string name="shortcut_long_label">Download mobile software</string>
+    <string name="shortcut_disabled_message">bi bo by</string>
 </resources>

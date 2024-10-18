@@ -1,9 +1,11 @@
 package com.example.thirdproject
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -11,7 +13,7 @@ import com.example.thirdproject.databinding.FileDownloadBinding
 
 class ListAdapterDownload(
     private val viewModel: ViewModelFile,
-    private val onItemClick: (Int, File) -> Unit
+    private val onItemClick: (Int, File) -> Unit,
 ) : ListAdapter<File, ListAdapterDownload.FileHolder>(FileDiffUlti()) {
 
     private var items: MutableList<File> = mutableListOf()
@@ -52,12 +54,15 @@ class ListAdapterDownload(
     }
 
     fun deleteItem(id: Int) {
+        // це погано працює, при посиланні
         val index = items.indexOfFirst { it.id == id } // Знаходимо індекс елемента за id
         // Поясни тут краще як працює items.indexOfFirst { it.id == id }
         //indexOfFirst — це метод, який використовується для пошуку індексу першого елемента в списку,
         // що задовольняє умові, зазначеній у лямбда-виразі. У твоєму випадку умова перевіряє, чи id елемента дорівнює заданому id
 //Працює O(n) -> трошки не добре треба O(1) -> ця функція зміг найкраще знайти, можливо краще було поставити Map, або щось інше поміняти щоб получити O(1)
         if (index >= 0) {
+            Log.d("abe","Видалення елемента з індексом: $index. Кількість елементів: ${items.size}" )
+
             items.removeAt(index)
             submitList(ArrayList(items))
 

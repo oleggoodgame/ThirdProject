@@ -21,18 +21,20 @@ class FragmentMain : Fragment() {
         _binding = FragmentMainBinding.inflate(inflater, container, false)
         binding.button.setOnClickListener{
             val navController = findNavController()
-            // Переходь на другий фрагмент
             navController.navigate(R.id.action_mainFragment2_to_blankFragment1)
         }
         binding.button2.setOnClickListener{
             val navController = findNavController()
-            // Переходь на другий фрагмент
             navController.navigate(R.id.action_mainFragment2_to_blankFragment2)
         }
         binding.button3.setOnClickListener{
             val lists = ArrayList(dataModel.itemsDeleted)
             dataModel.itemsDeleted.clear()
             dataModel.itemsAll.addAll(lists)
+        }
+        binding.button4.setOnClickListener{
+            val navController = findNavController()
+            navController.navigate(R.id.action_mainFragment2_to_blankFragment3)
         }
         return binding.root
     }

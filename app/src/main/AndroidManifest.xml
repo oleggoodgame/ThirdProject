@@ -20,7 +20,33 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="http"/>
+                <data android:host="www.aboba.com"/>
+                <data android:pathPrefix="/thirdProject"/>
+                <data android:scheme="https"/>
+                <data android:host="www.aboba.com"/>
+                <data android:pathPrefix="/thirdProject"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="http"/>
+                <data android:host="www.aboba.com"/>
+                <data android:pathPrefix="/thirdProject2"/>
+                <data android:scheme="https"/>
+                <data android:host="www.aboba.com"/>
+                <data android:pathPrefix="/thirdProject"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcut" />
         </activity>
+
     </application>
 
 </manifest>
